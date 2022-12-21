@@ -8,4 +8,15 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(<Hello />, root);
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Hello />
+      </div>
+    );
+  }
+}
+
+
+ReactDOM.render(<App />, root);
