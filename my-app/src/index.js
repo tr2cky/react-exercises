@@ -5,9 +5,12 @@ const root = document.getElementById('root');
 
 class Welcome extends React.Component {
   render() {
-    return <p>
-      Welcome, {this.props.name || "Undefined User"}!
-    </p>
+    return <div>
+      <p>
+        Welcome, {this.props.name || "Undefined User"}!
+      </p>
+      <p> Your age is {this.props.age || 0}</p>
+    </div>
   }
 }
 
@@ -15,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Welcome />
+        <Welcome name="Traktör" age={11} />
       </div>
     );
   }
