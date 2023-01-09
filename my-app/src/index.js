@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <Welcome name="John" age={2} />
-        <Counter />
+        <Counter initialValue={300} incrementBy= {3} timeout={3000} />
       </div>
     );
   }
