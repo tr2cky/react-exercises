@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Counter } from './counter';
 
 const root = document.getElementById('root');
 
@@ -29,6 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <Welcome name="John" age={2} />
+        <Counter />
       </div>
     );
   }
