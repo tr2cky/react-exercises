@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Counter } from './counter';
+import { ClickCounter, Counter } from './counter';
 
 const root = document.getElementById('root');
 
@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <Welcome name="John" age={2} />
-        <Counter initialValue={300} incrementBy= {3} timeout={3000} />
+        <ClickCounter />
       </div>
     );
   }
