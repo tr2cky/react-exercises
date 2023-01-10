@@ -7,13 +7,14 @@ export class Counter extends React.Component {
     constructor(props) {
     super(props);
     
+  }
+  componentDidMount() {
     setInterval(() => {
       this.setState((state) => {
         return {count: state.count +(this.props.incrementBy || 1)};
       });
       }, this.props.timeout || 1000);
-    
-  }
+    }
 
 
   render() {
