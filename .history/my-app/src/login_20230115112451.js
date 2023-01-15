@@ -72,7 +72,7 @@ export class UncontrolledLogin extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleFormSubmit}>
-                    <input autoFocus name="username" type="text" placeholder="Type Something" />
+                    <input name="username" type="text" placeholder="Type Something" />
                     <input name="password" type="password" placeholder="Type Something" />
                     <input name="remember" type="checkbox" placeholder="Type Something" />
                     <button type='submit' >Login</button>
