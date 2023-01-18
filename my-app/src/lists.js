@@ -27,11 +27,22 @@ export class TodoList extends React.Component {
         })
     }
 
+    handleReset() {
+        this.setState((state) => {
+            return {
+                items: [],
+                item: ""
+            }
+        })
+    }
+
+
     render() {
         return (
             <div>
                 <input type="text" value={this.state.item} onChange={this.inputHandler.bind(this)} placeholder="Add an item" />
                 <button onClick={this.handleClick.bind(this)} >Add</button>
+                <button onClick={this.handleReset.bind(this)} >Reset</button>
                 <ul>
                     {this.state.items.map((item, index) => {
                         return <li key={"todo" + index}>{item}</li>
