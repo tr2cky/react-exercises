@@ -14,12 +14,15 @@ export class TodoList extends React.Component {
         })
     }
 
+    
+
 
     handleClick() {
         let newItem = this.state.item;
         this.setState((state) => {
             return {
-                items: [...state.items, newItem]
+                items: [...state.items, newItem],
+                item: ""
             }
         })
     }
@@ -27,7 +30,7 @@ export class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" value={this.item} onChange={this.inputHandler.bind(this)} placeholder="Add an item" />
+                <input type="text" value={this.state.item} onChange={this.inputHandler.bind(this)} placeholder="Add an item" />
                 <button onClick={this.handleClick.bind(this)} >Add</button>
                 <ul>
                     {this.state.items.map((item, index) => {
