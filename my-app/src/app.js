@@ -8,9 +8,23 @@ import { Container } from './composition';
 export class App extends React.Component {
     render() {
         return (
-            <Container title="Nice Title">
-                <Welcome name="Bob" />
-            </Container>
+            <TodoList
+                render={(items, handleRemove) => (
+                    <div>
+                        <ul>
+                            {items.map((item, index) => {
+                                return <li key={"todo" + index}>
+                                    {item}
+                                    <button onClick={() => handleRemove(index)}
+                                    >Remove
+                                    </button>
+                                </li>
+                            })}
+                        </ul>
+                    </div>
+                )}
+
+            />
         );
     }
 }
