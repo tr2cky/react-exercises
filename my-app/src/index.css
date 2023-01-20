@@ -1,4 +1,8 @@
 .welcome {
-    background-color: beige;
-    border: 1px solid black;
+color: blue
+}
+
+.container {
+    background-color: white;
+    border: 1px solid red;
 }
