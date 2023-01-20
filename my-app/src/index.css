@@ -1,8 +1,12 @@
 .welcome {
-color: blue
+color: rgb(21, 90, 66)
 }
 
 .container {
     background-color: white;
     border: 1px solid red;
+}
+
+.container-title {
+    color: rgb(229, 3, 180);
 }

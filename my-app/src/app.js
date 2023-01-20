@@ -8,7 +8,7 @@ import { Container } from './composition';
 export class App extends React.Component {
     render() {
         return (
-            <Container>
+            <Container title="Nice Title">
                 <Welcome name="Bob" />
             </Container>
         );
