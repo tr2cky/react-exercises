@@ -9,7 +9,7 @@ import { DisplayLanguage } from './DisplayLanguage';
 export class App extends React.Component {
     render() {
         return (
-            <DisplayLanguage />
+            <Welcome name="John" />
         )
     }
 }
