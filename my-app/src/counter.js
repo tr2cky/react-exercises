@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export class Counter extends React.Component {
@@ -38,26 +39,18 @@ export class CounterDisplay extends React.Component {
 
 export class ClickCounter extends React.Component {
   state = {
-    count: 0,
-    pressed: "none"
-  }
-  
-  lastClickHandler(event) {
-    console.log(event.target.innerHTML);
-    this.setState((state) => {
-      return {
-        pressed: event.target.innerHTML,
-      };
-    });
+    count: 0
   }
 
   render () {
     return (
       <div>
-      <h1>Count: {this.state.pressed}</h1>
-        <button onClick={this.lastClickHandler.bind(this)}>Button 1</button>
-        <button onClick={this.lastClickHandler.bind(this)}>Button 2</button>
-        <button onClick={this.lastClickHandler.bind(this)}>Button 3</button>
+      <h1>Count: {this.state.count}</h1>
+        <button onClick={() => {
+          this.setState((state) => {
+            return {count: state.count + 1};
+          });
+        }}>Click me</button>
       </div>
     );
   }

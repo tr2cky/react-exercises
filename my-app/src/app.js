@@ -5,12 +5,14 @@ import { Login } from './login';
 import { Container } from './composition';
 import { DisplayLanguage } from './DisplayLanguage';
 import { Sum } from './Sum';
+import { ClickCounter } from './counter';
+import { HookCounter } from './hookCounter';
 
 
 export class App extends React.Component {
     render() {
         return (
-            <Sum numbers={[1, 4, 9, 9, 9]} />
+            <HookCounter />
         )
     }
 }
