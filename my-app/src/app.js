@@ -7,12 +7,15 @@ import { DisplayLanguage } from './DisplayLanguage';
 import { Sum } from './Sum';
 import { ClickCounter } from './counter';
 import { HookCounter } from './hookCounter';
+import { HookLogin } from './hookLogin';
 
 
 export class App extends React.Component {
     render() {
         return (
-            <HookCounter />
+            <div>
+                <HookLogin />
+            </div>
         )
     }
 }
