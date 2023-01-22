@@ -15,8 +15,7 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                {/* <GithubUser username="tr2cky"/> */}
-                <GithubUserList />
+                <HookCounter />
             </div>
         )
     }
