@@ -8,13 +8,14 @@ import { Sum } from './Sum';
 import { ClickCounter, Counter, HookCounterSec } from './counter';
 import { HookCounter } from './hookCounter';
 import { HookLogin } from './hookLogin';
+import { GithubUser } from './githubuser';
 
 
 export class App extends React.Component {
     render() {
         return (
             <div>
-                <HookCounterSec />
+                <GithubUser username="tr2cky"/>
             </div>
         )
     }
