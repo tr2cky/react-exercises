@@ -1,58 +1,46 @@
 
 import React from 'react';
 
+export function HookCounterSec() {
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCount(c => c + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+    </div>
+  );
+}
+
 export class Counter extends React.Component {
   state = {
-    count: (this.props.initialValue || 0)
+    count: 0
   };
-    constructor(props) {
+  constructor(props) {
     super(props);
-    
-  }
-  componentDidMount() {
+
     setInterval(() => {
       this.setState((state) => {
-        return {count: state.count +(this.props.incrementBy || 1)};
+        return { count: state.count + 1 };
       });
-      }, this.props.timeout || 1000);
-    }
+    }, 1000);
+
+  }
+
 
 
   render() {
     return (
       <div>
-        <CounterDisplay count={this.state.count} />
+        <h1>Count: {this.state.count}</h1>
       </div>
     );
   }
 }
-
-export class CounterDisplay extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Count: {this.props.count}</h1>
-      </div>
-    );
-  }
-}
-
-export class ClickCounter extends React.Component {
-  state = {
-    count: 0
-  }
-
-  render () {
-    return (
-      <div>
-      <h1>Count: {this.state.count}</h1>
-        <button onClick={() => {
-          this.setState((state) => {
-            return {count: state.count + 1};
-          });
-        }}>Click me</button>
-      </div>
-    );
-  }
-}
- 
