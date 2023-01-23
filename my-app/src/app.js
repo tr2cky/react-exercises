@@ -7,7 +7,7 @@ import { DisplayLanguage } from './DisplayLanguage';
 import { Sum } from './Sum';
 import { ClickCounter, Counter, HookCounterSec } from './counter';
 import { HookCounter } from './hookCounter';
-import { HookLogin } from './hookLogin';
+import { HookLogin, HookLogin2 } from './hookLogin';
 import { GithubUser, GithubUserList } from './githubuser';
 
 
@@ -15,7 +15,7 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                <HookCounter />
+                <HookLogin2 />
             </div>
         )
     }
