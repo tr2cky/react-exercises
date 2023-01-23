@@ -2,12 +2,13 @@ import React from "react"
 import { useGithubUser } from "./useGithubUser"
 
 export function GithubUser({ username }) {
-    const data = useGithubUser({ username });
+    const { data, error, loading } = useGithubUser({ username });
 
     return (
         <div>
-            <h1> Welcome <i> <b> {data?.name}</b></i> </h1>
-            <br /><i> <b> {data?.name}</b></i> right?
+            {data && <h2>Welcome {data.name}</h2>}
+            {loading && <h2>Loading...</h2>}
+            {error && <h2>Error: {error.message}</h2>}
         </div>
-    )
+    );
 }
