@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext } from "react"
+import { LanguageContext } from "./LanguageContext"
 
 
 export function Welcome({ name = "Stranger" }) {
