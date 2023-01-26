@@ -10,7 +10,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/counter" element={<HookCounter />} />
-            <Route path="users/:username" element={<ShowGithubUser />} />
+            <Route path="users/:username" element={<ShowGithubUser} />
         </Routes>
     )
 }

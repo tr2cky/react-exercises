@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    ".history/my-app/**/src": true,
+    ".history/my-app/**/src.*": true,
+    ".history": true
+  }
+}
