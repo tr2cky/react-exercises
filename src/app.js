@@ -4,6 +4,7 @@ import { Route } from "react-router-dom"
 import { Welcome } from "./welcome"
 import { HookCounter } from "./hookCounter"
 import { ShowGithubUser } from "./ShowGithubUser"
+import { GithubUserList } from "./githubuser"
 
 export default function App() {
     return (
@@ -16,7 +17,9 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Welcome />} />
                 <Route path="/counter" element={<HookCounter />} />
-                <Route path="users/:username" element={<ShowGithubUser />} />
+                <Route path="users" element={<GithubUserList />}>
+                    <Route path=":username" element={<ShowGithubUser />} />
+                </Route>
                 <Route path="*" element={<h1>404 Not Found</h1>} />
             </Routes>
         </div>
