@@ -26,6 +26,7 @@ export function GithubUserList() {
                 </ul>
             </div>
             <br />
+            <hr />
             {usernames.map(username => (
                 <GithubUser key={username} username={username} />
             ))}
