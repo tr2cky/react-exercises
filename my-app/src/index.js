@@ -6,10 +6,14 @@ const root = document.getElementById('root');
 
 
 class App extends React.Component {
+  handleLogin = (state) => {
+    console.log(state);
+  };
+
   render() {
     return (
       <div>
-        <Login />
+        <Login onLogin={this.handleLogin.bind(this)} />
       </div>
     );
   }
