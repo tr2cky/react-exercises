@@ -38,10 +38,11 @@ export function GithubUserList() {
 
 
 export function GithubUser({ username }) {
-    const { data, error, isLoading } = useGithubUser({ username });
+    const { data, error, isLoading, reFetch } = useGithubUser({ username });
 
     return (
         <div>
+            <button onClick={reFetch}>Re-fetch</button>
             {data && <li>
                 Welcome <i> <b> {data.name}</b></i>
                 <br /><i> <b> {data.name}</b></i> right?
