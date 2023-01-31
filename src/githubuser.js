@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, Outlet } from "react-router-dom";
+import { useGithubUser } from "./useGithubUser";
 
 export function GithubUserList() {
     const [usernames, setUsernames] = React.useState([]);
@@ -37,25 +38,16 @@ export function GithubUserList() {
 
 
 export function GithubUser({ username }) {
-    const [data, setData] = React.useState(null);
-    const [Username, setUsername] = React.useState(null);
-    React.useEffect(() => {
-        fetch(`https://api.github.com/users/${username}`)
-            .then(response => {
-                return response.json();
-            })
-            .then(json => {
-                setData(json)
-            });
-    }, [username]);
+    const { data, error, isLoading } = useGithubUser({ username });
 
     return (
         <div>
-            <hr />
-            <li>
-                Welcome <i> <b> {data?.name}</b></i>
-                <br /><i> <b> {data?.name}</b></i> right?
-            </li>
+            {data && <li>
+                Welcome <i> <b> {data.name}</b></i>
+                <br /><i> <b> {data.name}</b></i> right?
+            </li>}
+            {error && <li>Something went wrong</li>}
+            {isLoading && <li>Loading...</li>}
         </div>
     )
 }
